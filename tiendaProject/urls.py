@@ -19,6 +19,6 @@ from productApp import views as viewsProduct
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('product2/', viewsProduct.product_api_view),
+    path('producto2/', viewsProduct.product_api_view),
     path('product3/<int:pk>', viewsProduct.product_detail_view),
 ]
