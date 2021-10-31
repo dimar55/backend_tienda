@@ -36,7 +36,7 @@ def product_detail_view(request,pk=None):
     
     elif request.method == 'PUT':
         product = Product.objects.filter(id = pk).first()
-        product_serializer = ProductSerializer(data = request.data)
+        product_serializer = ProductSerializer(instance=product,data = request.data)
         if product_serializer.is_valid():
             product_serializer.save()
             return Response(product_serializer.data)
