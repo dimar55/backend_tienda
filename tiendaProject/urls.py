@@ -16,8 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from productApp import views as viewsProduct
+from rest_framework_simplejwt.views import (TokenObtainPairView, TokenRefreshView)
+from authApp import views
+
 
 urlpatterns = [
+    path('login/', TokenObtainPairView.as_view()),
+    path('refresh/', TokenRefreshView.as_view()),
+    path('user/', views.UserCreateView.as_view()),
+    path('user/<int:pk>/', views.UserDetailView.as_view()),
+
     path('admin/', admin.site.urls),
     path('producto2/', viewsProduct.product_api_view),
     path('product3/<int:pk>', viewsProduct.product_detail_view),

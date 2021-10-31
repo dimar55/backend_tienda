@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'authApp',
     'productApp',
     'corsheaders',
 ]
@@ -73,6 +74,8 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     )
 }
+
+AUTH_USER_MODEL = 'authApp.User'
 
 ROOT_URLCONF = 'tiendaProject.urls'
 
